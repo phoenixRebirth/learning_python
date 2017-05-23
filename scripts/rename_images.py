@@ -29,7 +29,8 @@ def app():
     try:
         log_file = open(LOG_NAME, "r")
 
-        print("Le script a planté la dernière fois que vous l'avez lancé. Voulez-vous reprendre là où vous en étiez?")
+        print("Le script a planté la dernière fois que vous l'avez lancé. \
+        Voulez-vous reprendre là où vous en étiez?")
         answer = input("(Type y/N)")
 
         if answer.lower() == 'y':
@@ -37,7 +38,8 @@ def app():
             starting_index = int(data)
             log_file.close()
             os.remove(LOG_NAME)
-            print("Reprise à partir de la "+str(starting_index)+"{rank} commande".format(rank = "ère" if starting_index == 1 else "ème"))
+            print("Reprise à partir de la "+str(starting_index)+"{rank} \
+            commande".format(rank = "ère" if starting_index == 1 else "ème"))
 
     except FileNotFoundError:
         pass
